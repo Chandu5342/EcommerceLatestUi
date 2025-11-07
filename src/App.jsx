@@ -8,11 +8,12 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import AdminProducts from "./pages/AdminProducts";
 
 function App() {
   return (
     <AuthProvider>
-      <Router>
+   
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -20,8 +21,9 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/products/manage" element={<AdminProducts />} />
         </Routes>
-      </Router>
+     
     </AuthProvider>
   );
 }

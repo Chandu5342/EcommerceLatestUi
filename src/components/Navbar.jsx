@@ -25,10 +25,14 @@ export default function Navbar() {
             <Nav.Link as={Link} to="/cart">Cart</Nav.Link>
             {user ? (
               <>
+              <Nav.Link as={Link} to="/products/manage">
+                Manage Products
+                </Nav.Link>
                 <span className="text-muted small">Hi, {user.name}</span>
                 <Button size="sm" variant="outline-danger" onClick={onLogout}>
                   Logout
                 </Button>
+                
               </>
             ) : (
               <>

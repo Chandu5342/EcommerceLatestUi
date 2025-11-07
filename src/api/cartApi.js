@@ -1,17 +1,24 @@
 import API from "./api";
 
-// Add product to cart or update quantity if already exists
+
+const getAuthHeader = () => {
+  const token = localStorage.getItem("token"); 
+  return { headers: { Authorization: `Bearer ${token}` } };
+};
+
+
 export const addToCart = (data) => {
-  // data = { productId, qty }
-  return API.post("/cart", data);
+ 
+  return API.post("/cart", data, getAuthHeader());
 };
 
-// Get all items in current user's cart with total
+
 export const getCart = () => {
-  return API.get("/cart");
+  return API.get("/cart", getAuthHeader());
 };
 
-// Remove a single cart item by cart item id
+
 export const removeFromCart = (id) => {
-  return API.delete(`/cart/${id}`);
+  console.log(id)
+  return API.delete(`/cart/${id}`, getAuthHeader());
 };

@@ -8,14 +8,17 @@ const AuthProvider = ({ children }) => {
 
   const handleLogin = async (data) => {
     const res = await loginUser(data);
-    setUser(res.data.user);
-    localStorage.setItem("user", JSON.stringify(res.data.user));
+    setUser(res.data);
+    localStorage.setItem("user", JSON.stringify(res.data));
+    //console.log(res.data)
+    localStorage.setItem("token", res.data.token);
   };
 
   const handleRegister = async (data) => {
     const res = await registerUser(data);
-    setUser(res.data.user);
-    localStorage.setItem("user", JSON.stringify(res.data.user));
+    setUser(res.data);
+    localStorage.setItem("user", JSON.stringify(res.data));
+    localStorage.setItem("token", res.data.token);
   };
 
   const handleLogout = () => {

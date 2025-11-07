@@ -69,7 +69,7 @@ export default function Checkout() {
               required
             />
           </Form.Group>
-          <h5 className="mb-3">Total: ${total.toFixed(2)}</h5>
+          <h5 className="mb-3">Total: {total.toFixed(2)}</h5>
           <Button type="submit" className="w-100">
             Place Order
           </Button>

@@ -26,7 +26,8 @@ export default function Cart() {
   };
 
   const handleRemove = async (id) => {
-    await removeFromCart(id);
+    let res=await removeFromCart(id);
+    console.log(res)
     fetchCart();
   };
 
@@ -61,7 +62,7 @@ export default function Cart() {
             ))}
           </Row>
           <div className="d-flex justify-content-between align-items-center mt-4">
-            <h4>Total: ${total.toFixed(2)}</h4>
+            <h4>Total: {total.toFixed(2)}</h4>
             <Button onClick={() => navigate("/checkout")}>Proceed to Checkout</Button>
           </div>
         </>
